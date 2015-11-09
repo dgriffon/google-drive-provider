@@ -1,0 +1,17 @@
+<gdrive = 'http://www.jahia.org/jahia/modules/googledrive/nt/1.0'>
+<gdrivemix = 'http://www.jahia.org/jahia/modules/googledrive/mix/1.0'>
+<jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+<mix = 'http://www.jcp.org/jcr/mix/1.0'>
+
+[gdrive:mountPointFactoryPage] > jnt:content, jmix:siteComponent, mix:title, jmix:studioOnly, jmix:mountPointFactory
+
+[gdrive:mountPointForm] > jnt:content, jmix:siteComponent, mix:title, jmix:studioOnly
+
+[gdrivemix:googleCredentials] mixin
+ - refreshToken (string)
+ - accessToken (string)
+
+[gdrive:mountPoint] > jnt:mountPoint
+ - j:rootPath (string)
+

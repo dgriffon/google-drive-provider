@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
+    <modules jcr:primaryType="jnt:modules">
+        <google-drive-provider j:dependencies="default external-provider serverSettings"
+                               j:modulePriority="0"
+                               j:moduleType="system"
+                               j:title="Jahia External Provider Google Drive"
+                               jcr:primaryType="jnt:module">
+
+            <portlets jcr:primaryType="jnt:portletFolder"/>
+            <files jcr:primaryType="jnt:folder"/>
+            <contents jcr:primaryType="jnt:contentFolder">
+                <google-drive-mount-point-factory j:mountPointType="gdrive:mountPoint"
+                                         j:templateName="google-drive-factory"
+                                         jcr:primaryType="gdrive:mountPointFactoryPage">
+                    <j:translation_en jcr:language="en"
+                                 jcr:mixinTypes="mix:title"
+                                      jcr:primaryType="jnt:translation"
+                                      jcr:title="Google Drive mount point factory"/>
+                </google-drive-mount-point-factory>
+            </contents>
+            <templates jcr:primaryType="jnt:templatesFolder">
+                <files jcr:primaryType="jnt:folder"/>
+                <contents jcr:primaryType="jnt:contentFolder"/>
+                <base j:hiddenTemplate="false"
+                      j:view="serverSettings"
+                      jcr:primaryType="jnt:template">
+                    <j:translation_en jcr:language="en"
+                                 jcr:mixinTypes="mix:title"
+                                      jcr:primaryType="jnt:translation"
+                                      jcr:title="base"/>
+                    <google-drive-factory j:applyOn="gdrive:mountPointFactoryPage"
+                                 j:defaultTemplate="true"
+                                 j:hiddenTemplate="false"
+                                 jcr:primaryType="jnt:contentTemplate">
+                        <j:translation_en jcr:language="en"
+                                    jcr:mixinTypes="mix:title"
+                                          jcr:primaryType="jnt:translation"
+                                          jcr:title="google-drive-factory"/>
+                        <pagecontent jcr:primaryType="jnt:contentList">
+                            <google-drive-mount-point-factory-form jcr:primaryType="gdrive:mountPointForm">
+                                <j:translation_en jcr:language="en"
+                                          jcr:mixinTypes="mix:title"
+                                                  jcr:primaryType="jnt:translation"
+                                                  jcr:title="Google Drive mount point factory form"/>
+                            </google-drive-mount-point-factory-form>
+                        </pagecontent>
+                    </google-drive-factory>
+                </base>
+            </templates>
+
+        </google-drive-provider>
+    </modules>
+</content>
